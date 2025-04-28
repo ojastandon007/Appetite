@@ -4,8 +4,11 @@ import base64
 import os
 import requests
 import json
+from flask_cors import CORS
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
+CORS(app)
 
 # === 1) Handle file upload and input parameters ===
 @app.route('/generate_title', methods=['POST'])
